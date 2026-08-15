@@ -1,0 +1,3162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PAN-U VISION | China Supply Chain Partner</title>
+
+<meta name="description"
+content="PAN-U VISION is a China-based sourcing and supply chain partner helping international buyers source, verify, manufacture, inspect and ship products from China.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+   PAN-U VISION V3.2
+   VISUAL UPGRADE — BASED ON USER CURRENT VERSION
+========================================================= */
+
+:root{
+    --black:#0b0b0b;
+    --black2:#111;
+    --white:#f7f7f4;
+    --gray:#999;
+    --light:#ecebe6;
+    --line:rgba(255,255,255,.14);
+    --line-dark:rgba(0,0,0,.12);
+    --accent:#c8ff45;
+    --max:1500px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Inter,Arial,sans-serif;
+    background:var(--white);
+    color:var(--black);
+    overflow-x:hidden;
+}
+
+body.menu-open{
+    overflow:hidden;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+button,
+input,
+textarea,
+select{
+    font:inherit;
+}
+
+img,
+video{
+    max-width:100%;
+}
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+.loader{
+    position:fixed;
+    inset:0;
+    background:#080808;
+    color:white;
+    z-index:9999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:opacity .8s ease,visibility .8s ease;
+}
+
+.loader.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.loader-inner{
+    text-align:center;
+}
+
+.loader-logo{
+    font-family:Manrope,sans-serif;
+    font-size:34px;
+    font-weight:800;
+    letter-spacing:-.07em;
+}
+
+.loader-line{
+    width:180px;
+    height:1px;
+    background:#333;
+    margin:25px auto 0;
+    overflow:hidden;
+}
+
+.loader-line span{
+    display:block;
+    width:0;
+    height:100%;
+    background:white;
+    animation:loading 1.8s ease forwards;
+}
+
+@keyframes loading{
+    to{width:100%}
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:82px;
+    z-index:1000;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 5vw;
+    color:white;
+    transition:.4s ease;
+}
+
+.header.scrolled{
+    background:rgba(10,10,10,.86);
+    backdrop-filter:blur(18px);
+    height:70px;
+}
+
+.logo{
+    font-family:Manrope,sans-serif;
+    font-weight:800;
+    font-size:21px;
+    letter-spacing:-.065em;
+}
+
+.logo span{
+    font-weight:500;
+    opacity:.5;
+    margin-left:5px;
+}
+
+.nav{
+    display:flex;
+    gap:32px;
+    font-size:11px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+}
+
+.nav a{
+    opacity:.7;
+    position:relative;
+}
+
+.nav a:after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-7px;
+    width:0;
+    height:1px;
+    background:white;
+    transition:.3s;
+}
+
+.nav a:hover{
+    opacity:1;
+}
+
+.nav a:hover:after{
+    width:100%;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.lang{
+    font-size:10px;
+    border:1px solid rgba(255,255,255,.3);
+    padding:9px 12px;
+    cursor:pointer;
+}
+
+.header-btn{
+    border:1px solid rgba(255,255,255,.5);
+    padding:12px 17px;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+}
+
+.menu{
+    display:none;
+    background:none;
+    color:white;
+    border:0;
+    font-size:24px;
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    background:#111;
+    color:white;
+    overflow:hidden;
+}
+
+.hero-video{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+
+.hero-overlay{
+    position:absolute;
+    inset:0;
+    background:
+        linear-gradient(90deg,rgba(0,0,0,.9),rgba(0,0,0,.25)),
+        linear-gradient(0deg,rgba(0,0,0,.75),transparent 60%);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:1100px;
+    padding:220px 7vw 130px;
+}
+
+.eyebrow{
+    font-size:10px;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+    color:#aaa;
+}
+
+.hero h1{
+    font-family:Manrope,sans-serif;
+    font-size:clamp(52px,7.6vw,115px);
+    line-height:.88;
+    letter-spacing:-.075em;
+    margin:30px 0;
+}
+
+.hero h1 span{
+    color:#777;
+}
+
+.hero-description{
+    max-width:610px;
+    color:#bbb;
+    font-size:17px;
+    line-height:1.75;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+    margin-top:38px;
+}
+
+.btn{
+    padding:17px 21px;
+    border:1px solid transparent;
+    font-size:10px;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    font-weight:700;
+    display:inline-flex;
+    align-items:center;
+    gap:25px;
+    transition:.3s;
+}
+
+.btn-white{
+    background:white;
+    color:#111;
+}
+
+.btn-white:hover{
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border-color:rgba(255,255,255,.35);
+    color:white;
+}
+
+.btn-outline:hover{
+    background:white;
+    color:#111;
+}
+
+.hero-bottom{
+    position:absolute;
+    z-index:3;
+    left:7vw;
+    right:7vw;
+    bottom:40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+}
+
+.hero-scroll{
+    font-size:9px;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:#888;
+}
+
+.hero-metrics{
+    display:flex;
+    gap:50px;
+}
+
+.metric{
+    border-top:1px solid rgba(255,255,255,.3);
+    padding-top:10px;
+    min-width:100px;
+}
+
+.metric strong{
+    display:block;
+    font-size:24px;
+    font-family:Manrope;
+}
+
+.metric span{
+    font-size:9px;
+    color:#888;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+}
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+.section{
+    padding:140px 7vw;
+}
+
+.container{
+    max-width:var(--max);
+    margin:auto;
+}
+
+.label{
+    font-size:9px;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:#888;
+    font-weight:700;
+}
+
+.title{
+    font-family:Manrope,sans-serif;
+    font-size:clamp(45px,6vw,90px);
+    line-height:.94;
+    letter-spacing:-.065em;
+}
+
+.title span{
+    color:#aaa;
+}
+
+.dark{
+    background:#0d0d0d;
+    color:white;
+}
+
+.dark .label{
+    color:#666;
+}
+
+.dark .title span{
+    color:#555;
+}
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.intro{
+    display:grid;
+    grid-template-columns:.55fr 1.45fr;
+    gap:80px;
+    align-items:start;
+}
+
+.intro-text{
+    max-width:850px;
+}
+
+.intro-text p{
+    margin-top:38px;
+    font-size:19px;
+    line-height:1.75;
+    color:#666;
+}
+
+
+/* =========================================================
+   CHALLENGE METRICS
+========================================================= */
+.challenge-metrics{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    margin-top:42px;
+    border-top:1px solid #ccc;
+    border-bottom:1px solid #ddd;
+}
+.challenge-metric{
+    padding:22px 24px 22px 0;
+    border-right:1px solid #ddd;
+}
+.challenge-metric:last-child{border-right:0;padding-left:24px}
+.challenge-metric strong{
+    display:block;
+    font-family:Manrope;
+    font-size:34px;
+    letter-spacing:-.05em;
+}
+.challenge-metric span{
+    display:block;
+    margin-top:5px;
+    font-size:10px;
+    color:#777;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+}
+
+/* =========================================================
+   SERVICES
+========================================================= */
+
+.services-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:80px;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    border-top:1px solid var(--line);
+}
+
+.service{
+    min-height:500px;
+    padding:0 35px 35px 0;
+    border-bottom:1px solid var(--line);
+    border-right:1px solid var(--line);
+    transition:.5s;
+    position:relative;
+    overflow:hidden;
+}
+.service-media{
+    height:250px;
+    margin-bottom:30px;
+    position:relative;
+    overflow:hidden;
+    background:#171717;
+}
+.service-media:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.55));
+    pointer-events:none;
+}
+.service-media .service-photo{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    filter:saturate(.8);
+    transition:transform .8s ease,filter .5s ease;
+}
+.service:hover .service-photo{
+    transform:scale(1.08);
+    filter:saturate(1);
+}
+.service-number{
+    position:absolute;
+    z-index:3;
+    top:18px;
+    left:18px;
+    color:white;
+    background:rgba(0,0,0,.62);
+    padding:7px 9px;
+    backdrop-filter:blur(8px);
+}
+
+.service:nth-child(3n){
+    border-right:0;
+    padding-left:35px;
+}
+
+.service:nth-child(3n+2){
+    padding-left:35px;
+}
+
+.service:hover{
+    background:#161616;
+}
+
+.service h3{
+    font-family:Manrope;
+    font-size:32px;
+    letter-spacing:-.04em;
+    margin:0 0 15px;
+}
+
+.service p{
+    color:#888;
+    font-size:13px;
+    line-height:1.8;
+    max-width:330px;
+}
+
+/* =========================================================
+   CHINA NETWORK
+========================================================= */
+
+.network{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8vw;
+    align-items:center;
+}
+
+.network-copy p{
+    margin:35px 0;
+    color:#666;
+    max-width:570px;
+    line-height:1.8;
+}
+
+.locations{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    border-top:1px solid #ccc;
+}
+
+.location{
+    padding:19px 0;
+    border-bottom:1px solid #ddd;
+}
+
+.location strong{
+    display:block;
+    font-size:13px;
+}
+
+.location span{
+    display:block;
+    color:#888;
+    font-size:10px;
+    margin-top:5px;
+}
+
+.map{
+    height:620px;
+    background:#e5e3dd;
+    position:relative;
+    overflow:hidden;
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);
+}
+.map-photo{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    opacity:.1;
+    mix-blend-mode:normal;
+ }
+.map {
+    position: relative;
+    overflow: hidden;
+    background: none;
+}
+
+.china-network-img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    opacity: 1 !important;
+    filter: none !important;
+}
+
+.map-shape{
+    display:none;
+}
+
+.map-label{
+    position:absolute;
+    left:50%;
+    top:47%;
+    transform:translate(-50%,-50%);
+    font-family:Manrope;
+    font-size:95px;
+    font-weight:800;
+    color:#bbb;
+    letter-spacing:-.1em;
+}
+
+.map-pin{
+    position:absolute;
+    z-index:3;
+    background:#111;
+    color:white;
+    font-size:9px;
+    padding:8px 11px;
+    letter-spacing:.06em;
+}
+
+.
+
+
+.network-note{
+    position:absolute;
+    left:22px;
+    bottom:20px;
+    z-index:4;
+    font-size:9px;
+    color:#555;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    background:rgba(255,255,255,.62);
+    padding:8px 10px;
+}
+
+/* =========================================================
+   INDUSTRIES
+========================================================= */
+
+.industries{
+    background:#e9e8e3;
+}
+
+.industry-grid{
+    margin-top:70px;
+    display:grid;
+    grid-template-columns:repeat(5,minmax(0,1fr));
+    gap:12px;
+}
+
+/* Five product / service categories stay on one row on desktop. */
+@media(max-width:1100px){
+    .industry-grid{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+    }
+}
+
+@media(max-width:760px){
+    .industry-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+.industry{
+    min-height:520px;
+    position:relative;
+    overflow:hidden;
+    background:#222;
+    color:white;
+    display:flex;
+    align-items:flex-end;
+}
+
+.industry-bg{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    transition:transform .8s;
+}
+
+.industry:hover .industry-bg{
+    transform:scale(1.07);
+}
+
+.industry-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(0deg,rgba(0,0,0,.8),transparent 60%);
+}
+
+.industry-content{
+    position:relative;
+    z-index:2;
+    padding:26px;
+}
+
+.industry-content small{
+    font-size:9px;
+    color:#aaa;
+}
+
+.industry-content h3{
+    font-family:Manrope;
+    font-size:34px;
+    line-height:.95;
+    letter-spacing:-.05em;
+    margin:15px 0;
+}
+
+.industry-content p{
+    font-size:11px;
+    color:#bbb;
+    line-height:1.7;
+}
+
+/*
+ PHOTO POSITIONS:
+
+ buildings.jpg
+ furniture.jpg
+ new-energy.jpg
+ oem.jpg
+ small-commodities.jpg
+
+ 修改下面四个 background-image 即可。
+*/
+
+.building.png .industry-bg{
+    background-image:linear-gradient(135deg,#343434,#111);
+}
+
+.industry-furniture .industry-bg{
+    background-image:linear-gradient(135deg,#343434,#111);
+}
+
+.industry-new-energy .industry-bg{
+    background-image:linear-gradient(135deg,#343434,#111);
+}
+
+.industry-oem .industry-bg{
+    background-image:linear-gradient(135deg,#343434,#111);
+}
+
+.industry-Small commodities .industry-bg{
+    background-image:linear-gradient(135deg,#343434,#111);
+}
+
+.procurement-section{
+    background:#f4f4f1;
+}
+
+.procurement{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    min-height:650px;
+}
+
+.procurement-photo{
+    min-height:560px;
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+
+.procurement-photo:after{
+    content:"CHINA-SIDE PROCUREMENT";
+    position:absolute;
+    left:25px;
+    bottom:25px;
+    font-size:9px;
+    letter-spacing:.18em;
+    color:#fff;
+    background:rgba(0,0,0,.65);
+    padding:10px 12px;
+}
+
+.procurement-copy{
+    padding:65px 70px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.procurement-copy p{
+    margin:30px 0;
+    color:#666;
+    line-height:1.85;
+    max-width:620px;
+}
+
+.procurement-list{
+    border-top:1px solid #ccc;
+    margin-bottom:35px;
+}
+
+.procurement-list div{
+    padding:16px 0;
+    border-bottom:1px solid #ccc;
+    font-size:12px;
+    color:#222;
+}
+
+.procurement-list span{
+    display:inline-block;
+    width:48px;
+    color:#999;
+}
+
+.btn-dark{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    background:#111;
+    color:#fff;
+    padding:15px 20px;
+    font-size:10px;
+    letter-spacing:.08em;
+    text-decoration:none;
+    width:max-content;
+}
+
+/* =========================================================
+   PROCESS
+========================================================= */
+
+.process-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:75px;
+}
+
+.process-grid{
+    display:grid;
+    grid-template-columns:repeat(6,minmax(0,1fr));
+    border-top:1px solid #333;
+}
+
+.process-step{
+    min-height:430px;
+    padding:0 20px 40px 0;
+    border-bottom:1px solid #333;
+    position:relative;
+    overflow:hidden;
+}
+.process-photo{
+    height:205px;
+    margin-bottom:24px;
+    position:relative;
+    overflow:hidden;
+    background:#161616;
+}
+.process-photo div{
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    opacity:.8;
+    transition:transform .8s ease,opacity .5s ease;
+}
+.process-step:hover .process-photo div{
+    transform:scale(1.07);
+    opacity:1;
+}
+
+.process-step:not(:first-child){
+    padding-left:20px;
+    border-left:1px solid #333;
+}
+
+.process-step span{
+    color:#666;
+    font-size:10px;
+}
+
+.process-step h3{
+    font-family:Manrope;
+    margin:18px 0 12px;
+    font-size:22px;
+}
+
+.process-step p{
+    color:#777;
+    font-size:11px;
+    line-height:1.7;
+}
+
+/* =========================================================
+   QUALITY
+========================================================= */
+
+.quality{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8vw;
+    align-items:center;
+}
+
+.quality-photo{
+    height:700px;
+    background:linear-gradient(135deg,#555,#151515);
+    background-size:cover;
+    background-position:center;
+    position:relative;
+    overflow:hidden;
+}
+.quality-photo:before{
+    content:"ON-SITE / FACTORY QC";
+    position:absolute;
+    top:24px;
+    left:24px;
+    z-index:2;
+    font-size:9px;
+    letter-spacing:.18em;
+    color:white;
+    background:rgba(0,0,0,.58);
+    padding:9px 11px;
+    backdrop-filter:blur(8px);
+}
+
+.quality-photo:after{
+    content:"QUALITY CONTROL / FACTORY INSPECTION";
+    position:absolute;
+    bottom:25px;
+    left:25px;
+    color:white;
+    font-size:9px;
+    letter-spacing:.16em;
+}
+
+.quality-copy p{
+    margin:35px 0;
+    color:#666;
+    line-height:1.8;
+}
+
+.qc-list{
+    border-top:1px solid #ccc;
+}
+
+.qc-list div{
+    padding:18px 0;
+    border-bottom:1px solid #ddd;
+    font-size:12px;
+}
+
+.qc-list span{
+    display:inline-block;
+    width:50px;
+    color:#999;
+}
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+    margin-top:70px;
+}
+
+.project{
+    background:#171717;
+    overflow:hidden;
+}
+
+.project-image{
+    height:370px;
+    background-size:cover;
+    background-position:center;
+    transition:.7s;
+}
+
+.project:hover .project-image{
+    transform:scale(1.04);
+}
+
+.project-content{
+    padding:27px;
+}
+
+.project-content small{
+    font-size:9px;
+    color:#777;
+    letter-spacing:.15em;
+}
+
+.project-content h3{
+    font-family:Manrope;
+    font-size:25px;
+    margin:13px 0;
+}
+
+.project-content p{
+    color:#888;
+    font-size:11px;
+    line-height:1.7;
+}
+
+.project-sa .project-image{
+    background-image:url("assets/project-south-africa.jpg");
+}
+
+.project-id .project-image{
+    background-image:url("assets/project-indonesia.jpg");
+}
+
+.project-me .project-image{
+    background-image:url("assets/project-middle-east.png");
+}
+
+
+.project-image{
+    position:relative;
+}
+.project-image:after{
+    content:"FIELD EXECUTION";
+    position:absolute;
+    left:18px;
+    top:18px;
+    font-size:8px;
+    letter-spacing:.18em;
+    padding:8px 10px;
+    background:rgba(0,0,0,.62);
+    color:#fff;
+}
+
+/* =========================================================
+   NUMBERS
+========================================================= */
+
+.numbers{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border-top:1px solid #ccc;
+}
+
+.number{
+    padding:45px 20px 45px 0;
+    border-bottom:1px solid #ccc;
+}
+
+.number:not(:first-child){
+    padding-left:25px;
+    border-left:1px solid #ccc;
+}
+
+.number strong{
+    display:block;
+    font-family:Manrope;
+    font-size:58px;
+    letter-spacing:-.06em;
+}
+
+.number span{
+    color:#777;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+}
+
+/* =========================================================
+   FOUNDER
+========================================================= */
+
+.founder{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:9vw;
+    align-items:center;
+}
+
+.founder-photo{
+    height:650px;
+    background-image:linear-gradient(135deg,#333,#111);
+    background-size:cover;
+    background-position:center;
+    background-color:#333;
+}
+
+.founder-copy p{
+    margin:32px 0;
+    max-width:650px;
+    color:#666;
+    line-height:1.8;
+}
+
+.founder-name{
+    font-family:Manrope;
+    font-size:28px;
+    margin-top:40px;
+}
+
+.credentials{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:30px;
+}
+
+.credentials span{
+    padding:10px 12px;
+    border:1px solid #ccc;
+    font-size:9px;
+}
+
+
+.founder-quote{
+    margin:34px 0;
+    padding:24px 0 24px 24px;
+    border-left:2px solid #111;
+    font-family:Manrope;
+    font-size:20px;
+    line-height:1.35;
+    letter-spacing:-.03em;
+}
+.founder-meta{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:10px;
+    margin-top:30px;
+}
+.founder-meta div{
+    border-top:1px solid #ddd;
+    padding-top:12px;
+    font-size:9px;
+    color:#777;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+}
+.founder-meta strong{
+    display:block;
+    color:#111;
+    font-size:12px;
+    margin-bottom:4px;
+}
+
+/* =========================================================
+   BRAND VIDEO
+========================================================= */
+
+.brand-video{
+    background:#0b0b0b;
+    padding:30px 5vw;
+}
+
+.video-box{
+    height:80vh;
+    position:relative;
+    overflow:hidden;
+    background:#181818;
+}
+
+.video-box video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.video-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    padding:6vw;
+    background:linear-gradient(0deg,rgba(0,0,0,.8),transparent 65%);
+    color:white;
+}
+
+.video-overlay h2{
+    font-family:Manrope;
+    font-size:clamp(50px,7vw,105px);
+    line-height:.9;
+    letter-spacing:-.07em;
+    margin-top:20px;
+}
+
+.video-overlay h2 span{
+    color:#666;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact{
+    display:grid;
+    grid-template-columns:.8fr 1.2fr;
+    gap:9vw;
+}
+
+.contact-copy p{
+    max-width:550px;
+    margin:35px 0;
+    color:#666;
+    line-height:1.8;
+}
+
+.contact-info{
+    display:grid;
+    grid-template-columns:90px 1fr;
+    gap:12px 20px;
+    margin-top:45px;
+}
+
+.contact-info span{
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    color:#999;
+}
+
+.contact-info strong{
+    font-size:13px;
+}
+
+.form{
+    background:#e7e5df;
+    padding:45px;
+}
+
+.form-row{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.form label{
+    display:block;
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+    color:#777;
+    margin-bottom:25px;
+}
+
+.form input,
+.form select,
+.form textarea{
+    width:100%;
+    border:0;
+    border-bottom:1px solid #aaa;
+    background:transparent;
+    outline:none;
+    padding:13px 0;
+}
+
+.form textarea{
+    resize:vertical;
+}
+
+.form button{
+    width:100%;
+    border:0;
+    background:#111;
+    color:white;
+    padding:18px;
+    cursor:pointer;
+    font-size:10px;
+    text-transform:uppercase;
+    letter-spacing:.1em;
+}
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.whatsapp{
+    position:fixed;
+    right:25px;
+    bottom:25px;
+    z-index:900;
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    background:#25d366;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    font-size:24px;
+    box-shadow:0 10px 35px rgba(0,0,0,.25);
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer{
+    background:#080808;
+    color:white;
+    padding:80px 7vw 30px;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:50px;
+}
+
+.footer-logo{
+    font-family:Manrope;
+    font-weight:800;
+    font-size:25px;
+    letter-spacing:-.06em;
+}
+
+.footer p{
+    color:#777;
+    font-size:11px;
+    line-height:1.7;
+    margin-top:20px;
+}
+
+.footer h4{
+    font-size:9px;
+    color:#555;
+    letter-spacing:.15em;
+    margin-bottom:20px;
+}
+
+.footer a{
+    display:block;
+    font-size:11px;
+    color:#aaa;
+    margin:10px 0;
+}
+
+.footer-bottom{
+    grid-column:1/-1;
+    border-top:1px solid #252525;
+    padding-top:22px;
+    color:#555;
+    font-size:9px;
+}
+
+/* =========================================================
+   SCROLL ANIMATION
+========================================================= */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:opacity .9s ease,transform .9s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:none;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:1000px){
+
+    .nav,
+    .header-btn,
+    .lang{
+        display:none;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    .hero-content{
+        padding:180px 6vw 120px;
+    }
+
+    .hero h1{
+        font-size:54px;
+    }
+
+    .hero-bottom{
+        left:6vw;
+        right:6vw;
+    }
+
+    .hero-metrics{
+        display:none;
+    }
+
+    .intro,
+    .network,
+    .quality,
+    .founder,
+    .contact{
+        grid-template-columns:1fr;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .service{min-height:440px;}
+    .service-media{height:210px;}
+    .process-photo{height:170px;}
+    .challenge-metrics{grid-template-columns:1fr;}
+    .challenge-metric{border-right:0;border-bottom:1px solid #ddd;padding:18px 0;}
+    .challenge-metric:last-child{border-bottom:0;padding-left:0;}
+
+    .service:nth-child(3n),
+    .service:nth-child(3n+2){
+        padding-left:0;
+        padding-right:25px;
+        border-right:1px solid var(--line);
+    }
+
+    .industry-grid,
+    .project-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .process-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .numbers{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .founder-photo,
+    .quality-photo{
+        height:550px;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .section{
+        padding:90px 6vw;
+    }
+
+    .hero h1{
+        font-size:46px;
+    }
+
+    .hero-description{
+        font-size:14px;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .service-grid,
+    .industry-grid,
+    .project-grid,
+    .process-grid,
+    .numbers{
+        grid-template-columns:1fr;
+    }
+
+    .service:nth-child(3n),
+    .service:nth-child(3n+2){
+        padding-left:0;
+        padding-right:0;
+        border-right:0;
+    }
+
+    .process-step:not(:first-child){
+        padding-left:0;
+        border-left:0;
+    }
+
+    .form-row{
+        grid-template-columns:1fr;
+    }
+
+    .form{
+        padding:25px;
+    }
+
+    .map{
+        height:450px;
+    }
+
+    .map-label{
+        font-size:65px;
+    }
+
+    .video-box{
+        height:60vh;
+    }
+
+    .footer{
+        grid-template-columns:1fr;
+    }
+
+    .footer-bottom{
+        grid-column:auto;
+    }
+
+}
+
+
+/* =========================================================
+   V3.2 VISUAL REFINEMENTS
+========================================================= */
+.service-media,.process-photo{border:1px solid rgba(255,255,255,.08)}
+.service-media .service-photo,.process-photo div,.map-photo{background-repeat:no-repeat}
+.industry-bg[data-photo],.project-image[data-photo],.quality-photo[data-photo],.founder-photo[data-photo]{background-repeat:no-repeat}
+@media(max-width:900px){
+    .network{grid-template-columns:1fr;gap:40px}
+    .map{height:500px}
+    .service-grid{grid-template-columns:1fr}
+    .service:nth-child(3n),.service:nth-child(3n+2){padding-left:0}
+    .service{border-right:0;padding-right:0}
+    .service-media{height:230px}
+    .process-grid{grid-template-columns:1fr 1fr}
+    .process-step:not(:first-child){padding-left:16px}
+    .process-step{min-height:390px}
+    .process-photo{height:190px}
+    .founder-meta{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+    .procurement{grid-template-columns:1fr}
+    .procurement-photo{min-height:360px}
+    .procurement-copy{padding:45px 25px}
+    .process-grid{grid-template-columns:1fr}
+    .process-step{padding-left:0!important;border-left:0!important}
+    .process-photo{height:220px}
+    .challenge-metrics{margin-top:30px}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     LOADER
+========================================================= -->
+
+<div class="loader" id="loader">
+    <div class="loader-inner">
+        <div class="loader-logo">PAN-U VISION</div>
+        <div class="loader-line">
+            <span></span>
+        </div>
+    </div>
+</div>
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
+
+<header class="header" id="header">
+
+    <a href="#home" class="logo">
+        PAN-U <span>VISION</span>
+    </a>
+
+    <nav class="nav">
+        <a href="#solutions">Solutions</a>
+        <a href="#procurement">Procurement</a>
+        <a href="#industries">Industries</a>
+        <a href="#process">Process</a>
+        <a href="#quality">Quality</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <div class="header-right">
+
+        <div class="lang" onclick="toggleLanguage()">
+            EN / 中
+        </div>
+
+        <a href="#contact" class="header-btn">
+            Start a Project
+        </a>
+
+        <button class="menu" onclick="openMenu()">
+            ☰
+        </button>
+
+    </div>
+
+</header>
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<section class="hero" id="home">
+
+    <!--
+    ========================================================
+    【照片/视频位置 01】
+
+    文件：
+    assets/hero.mp4
+
+    内容建议：
+    中国工厂
+    生产线
+    产品
+    Max验货
+    装柜
+    港口
+
+    建议15-25秒
+    ========================================================
+    -->
+
+    <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        poster="assets/hero.png"
+        data-poster-base="hero">
+
+        <source
+            src="assets/hero宣传片.mp4"
+            type="video/mp4">
+
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            CHINA SOURCING · PROCUREMENT · QUALITY · LOGISTICS
+        </div>
+
+        <h1>
+            Your China Supply Chain,
+            <span>Built Around Your Business.</span>
+        </h1>
+
+        <p class="hero-description">
+            PAN-U VISION helps international buyers source,
+            verify, manufacture, inspect and ship products
+            from China through one integrated supply chain.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#contact" class="btn btn-white">
+                Start Your Sourcing Project
+                →
+            </a>
+
+            <a href="#solutions" class="btn btn-outline">
+                Explore Solutions
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-bottom">
+
+        <div class="hero-scroll">
+            Scroll to explore ↓
+        </div>
+
+        <div class="hero-metrics">
+
+            <div class="metric">
+                <strong>01</strong>
+                <span>Source</span>
+            </div>
+
+            <div class="metric">
+                <strong>02</strong>
+                <span>Verify</span>
+            </div>
+
+            <div class="metric">
+                <strong>03</strong>
+                <span>Control</span>
+            </div>
+
+            <div class="metric">
+                <strong>04</strong>
+                <span>Deliver</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     INTRO
+========================================================= -->
+
+<section class="section">
+
+    <div class="intro reveal">
+
+        <div>
+            <div class="label">
+                THE CHALLENGE
+            </div>
+        </div>
+
+        <div class="intro-text">
+
+            <h2 class="title">
+                China has thousands of suppliers.
+                <span>Finding the right one is the hard part.</span>
+            </h2>
+
+            <p>
+                The challenge isn't finding a factory.
+                It's finding the right factory, at the right
+                price, with the right quality — and managing
+                everything between the first conversation
+                and the final shipment.
+            </p>
+
+            <div class="challenge-metrics">
+                <div class="challenge-metric"><strong>01</strong><span>China-side partner</span></div>
+                <div class="challenge-metric"><strong>06</strong><span>Core supply chain steps</span></div>
+                <div class="challenge-metric"><strong>24/7</strong><span>Local coordination</span></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     SOLUTIONS
+========================================================= -->
+
+<section class="section dark" id="solutions">
+
+    <div class="container">
+
+        <div class="services-head reveal">
+
+            <div class="label">
+                ONE PARTNER · EVERY STEP
+            </div>
+
+            <h2 class="title">
+                China sourcing
+                <span>without the guesswork.</span>
+            </h2>
+
+        </div>
+
+        <div class="service-grid">
+
+            <article class="service reveal">
+                <div class="service-media"><div class="service-photo" data-photo="Source"></div><span class="service-number">01</span></div>
+                <h3>Source</h3>
+                <p>Identify manufacturers across China's major industrial clusters based on your product and market requirements.</p>
+            </article>
+
+            <article class="service reveal">
+                <div class="service-media"><div class="service-photo" data-photo="Verify1"></div><span class="service-number">02</span></div>
+                <h3>Verify</h3>
+                <p>Evaluate factories, capabilities, certifications, products and commercial reliability before you commit.</p>
+            </article>
+
+            <article class="service reveal">
+                <div class="service-media"><div class="service-photo" data-photo="Negotiate"></div><span class="service-number">03</span></div>
+                <h3>Negotiate</h3>
+                <p>Benchmark pricing, specifications, MOQ, packaging, payment terms and production schedules.</p>
+            </article>
+
+            <article class="service reveal">
+                <div class="service-media"><div class="service-photo" data-photo="Manufacture"></div><span class="service-number">04</span></div>
+                <h3>Manufacture</h3>
+                <p>Coordinate samples, product development, packaging and supplier communication throughout production.</p>
+            </article>
+
+            <article class="service reveal">
+                <div class="service-media"><div class="service-photo" data-photo="quality-control"></div><span class="service-number">05</span></div>
+                <h3>Inspect</h3>
+                <p>Build quality checkpoints into the production process before the goods leave the factory.</p>
+            </article>
+
+            <article class="service reveal">
+                <div class="service-media"><div class="service-photo" data-photo="Inspect"></div><span class="service-number">06</span></div>
+                <h3>Deliver</h3>
+                <p>Coordinate consolidation, loading, export documentation and international logistics.</p>
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+    CHINA NETWORK
+========================================================= -->
+<section class="section"> <div class="network reveal"> <div class="network-copy"> <div class="label"> THE CHINA ADVANTAGE </div> <h2 class="title"> One supply network. <span>Many industrial clusters.</span> </h2> <p> We connect international buyers with manufacturing resources where products are actually made. </p> <div class="locations"> <div class="location"> <strong>Foshan</strong> <span>Building Materials · Furniture</span> </div> <div class="location"> <strong>Qingdao</strong> <span>Industrial · Logistics</span> </div> 
+
+<div class="location"> <strong>Guangzhou</strong> <span>Hardware · Home Products</span> </div> <div class="location"> <strong>Yiwu</strong> <span>Small Commodities</span> </div> <div class="location"> <strong>Ningbo</strong> <span>Hardware · Electrical</span> </div> <div class="location"> <strong>Shenzhen</strong> <span>Technology · Electronics</span> </div> </div> </div> 
+
+<div class="map">
+    <img src="assets/china-network.png" class="china-network-img">
+
+       
+</section>
+
+<!-- =========================================================
+     INDUSTRIES
+========================================================= -->
+
+<section class="section industries" id="industries">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="label">
+                WHAT WE SOURCE
+            </div>
+
+            <h2 class="title">
+                Built around industries
+                <span>we understand.</span>
+            </h2>
+
+        </div>
+
+        <!--
+        FIVE PRODUCT / SERVICE PHOTO POSITIONS
+        01 data-photo="building"              Building Materials
+        02 data-photo="furniture"          Furniture & Living
+        03 data-photo="new-energy"         New Energy Products
+        04 data-photo="OEM2"                 OEM / ODM Projects
+        05 data-photo="small-commodities"  Small Commodities
+
+        Put the corresponding image in /assets.
+        The page tries PNG, JPG, JPEG and WEBP automatically.
+        -->
+
+        <div class="industry-grid">
+
+            <!--
+            【照片位置 02】
+
+            assets/building.png / .jpg / .jpeg / .webp
+
+            推荐：
+            硅酮胶、PU Foam、美缝剂、门窗、
+            玻璃、地坪漆、建筑五金等
+            -->
+
+            <a href="#contact"
+               class="industry industry-building reveal">
+
+                <div class="industry-bg" data-photo="building"></div>
+                <div class="industry-overlay"></div>
+
+                <div class="industry-content">
+
+                    <small>01</small>
+
+                    <h3>
+                        Building<br>
+                        Materials
+                    </h3>
+
+                    <p>
+                        Sealants · Adhesives · Flooring ·
+                        Windows · Glass · Hardware· Tile
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!--
+            【照片位置 03】
+
+            assets/furniture.jpg
+
+            儿童家具 / 家具工厂
+            -->
+
+            <a href="#contact"
+               class="industry industry-furniture reveal">
+
+                <div class="industry-bg" data-photo="furniture"></div>
+                <div class="industry-overlay"></div>
+
+                <div class="industry-content">
+
+                    <small>02</small>
+
+                    <h3>
+                        Furniture<br>
+                        & Living
+                    </h3>
+
+                    <p>
+                        Children's Furniture · Home ·
+                        Outdoor · Commercial
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!--
+            【照片位置 04】
+
+            assets/new-energy.png / .jpg / .jpeg / .webp
+            新能源产品展示
+            -->
+
+            <a href="#contact"
+               class="industry industry-new-energy reveal">
+
+                <div class="industry-bg" data-photo="new-energy"></div>
+                <div class="industry-overlay"></div>
+
+                <div class="industry-content">
+
+                    <small>03</small>
+
+                    <h3>
+                        New Energy<br>
+                        Products
+                    </h3>
+
+                    <p>
+                        Solar · Energy Storage · EV Charging ·
+                        Power Solutions
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!--
+            【照片位置 05】
+
+            assets/OEM.png / .jpg / .jpeg / .webp
+
+            OEM / ODM工厂照片
+            -->
+
+            <a href="#contact"
+               class="industry industry-oem reveal">
+
+                <div class="industry-bg" data-photo="OEM"></div>
+                <div class="industry-overlay"></div>
+
+                <div class="industry-content">
+
+                    <small>04</small>
+
+                    <h3>
+                        OEM / ODM<br>
+                        Projects
+                    </h3>
+
+                    <p>
+                        Custom Specification · Packaging ·
+                        Private Label
+                    </p>
+
+                </div>
+
+            </a>
+
+            <!--
+            【照片位置 06】
+
+            assets/small-commodities.png / .jpg / .jpeg / .webp
+            小商品 / 日用百货 / 轻小件产品
+            -->
+
+            <a href="#contact"
+               class="industry industry-small reveal">
+
+                <div class="industry-bg" data-photo="small-commodities"></div>
+                <div class="industry-overlay"></div>
+
+                <div class="industry-content">
+
+                    <small>05</small>
+
+                    <h3>
+                        Small<br>
+                        Commodities
+                    </h3>
+
+                    <p>
+                        Daily Goods · Accessories · Consumer Products ·
+                        Fast-Moving Items
+                    </p>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     PROCUREMENT AGENCY
+========================================================= -->
+
+<section class="section procurement-section" id="procurement">
+
+    <div class="procurement reveal">
+
+        <div class="procurement-photo" data-photo="OEM1"></div>
+
+        <div class="procurement-copy">
+
+            <div class="label">
+                PROCUREMENT AGENCY
+            </div>
+
+            <h2 class="title">
+                Your purchasing team
+                <span>on the ground in China.</span>
+            </h2>
+
+            <p>
+                When you need more than a supplier introduction,
+                PAN-U VISION can act as your China-side procurement
+                partner — from supplier discovery and RFQ collection
+                to negotiation, order follow-up, inspection and export.
+            </p>
+
+            <div class="procurement-list">
+                <div><span>01</span> Supplier sourcing & shortlisting</div>
+                <div><span>02</span> RFQ comparison & price negotiation</div>
+                <div><span>03</span> Sample approval & order follow-up</div>
+                <div><span>04</span> Quality control & pre-shipment inspection</div>
+                <div><span>05</span> Consolidation & export coordination</div>
+            </div>
+
+            <a href="#contact" class="btn btn-dark">
+                Discuss Procurement Support →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     PROCESS
+========================================================= -->
+
+<section class="section dark" id="process">
+
+    <div class="container">
+
+        <div class="process-head reveal">
+
+            <div class="label">
+                HOW IT WORKS
+            </div>
+
+            <h2 class="title">
+                From requirement
+                <span>to shipment.</span>
+            </h2>
+
+        </div>
+
+        <!--
+        PHOTO POSITIONS 07-12 · HOW IT WORKS
+
+        Each .process-photo below accepts a real image from /assets.
+        Change only data-photo="..." to change the image.
+        The loader automatically tries .png / .jpg / .jpeg / .webp.
+        -->
+
+        <div class="process-grid">
+
+            <div class="process-step reveal"><div class="process-photo"><div data-photo="hero2"></div></div><span>01</span><h3>Brief</h3><p>Understand your product, market, quantity and target.</p></div>
+            <div class="process-step reveal"><div class="process-photo"><div data-photo="source"></div></div><span>02</span><h3>Source</h3><p>Identify suitable factories and suppliers.</p></div>
+            <div class="process-step reveal"><div class="process-photo"><div data-photo="hero3"></div></div><span>03</span><h3>Validate</h3><p>Samples, specifications, factory verification and terms.</p></div>
+            <div class="process-step reveal"><div class="process-photo"><div data-photo="Verify"></div></div><span>04</span><h3>Produce</h3><p>Coordinate production, packaging and communication.</p></div>
+            <div class="process-step reveal"><div class="process-photo"><div data-photo="pre-shipment check"></div></div><span>05</span><h3>Inspect</h3><p>Quality checks before goods leave the factory.</p></div>
+            <div class="process-step reveal"><div class="process-photo"><div data-photo="ship"></div></div><span>06</span><h3>Ship</h3><p>Consolidation, loading and international logistics.</p></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     QUALITY
+========================================================= -->
+
+<section class="section">
+
+    <div class="quality reveal">
+
+        <!--
+        【照片位置 06】
+
+        assets/quality-control.jpg
+
+        非常重要！
+
+        最好使用你本人在工厂：
+        验货 / 测量 / 检查包装 / 检查产品
+        的真实照片。
+        -->
+
+        <div
+            class="quality-photo"
+            data-photo="hero3"
+            style="
+            background-image:
+            url('assets/hero3.png');
+            ">
+        </div>
+
+        <div>
+
+            <div class="label">
+                QUALITY CONTROL
+            </div>
+
+            <h2 class="title">
+                Quality is not a promise.
+                <span>It's a process.</span>
+            </h2>
+
+            <p>
+                We build quality checkpoints into
+                the purchasing journey so problems
+                are discovered before the container
+                reaches the port.
+            </p>
+
+            <div class="qc-list">
+
+                <div>
+                    <span>01</span>
+                    Supplier Verification
+                </div>
+
+                <div>
+                    <span>02</span>
+                    Factory Audit
+                </div>
+
+                <div>
+                    <span>03</span>
+                    Raw Material Check
+                </div>
+
+                <div>
+                    <span>04</span>
+                    Production Monitoring
+                </div>
+
+                <div>
+                    <span>05</span>
+                    Pre-Shipment Inspection
+                </div>
+
+                <div>
+                    <span>06</span>
+                    Container Loading
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     PROJECTS
+========================================================= -->
+
+<section class="section dark" id="projects">
+
+    <div class="container">
+
+        <div class="reveal">
+
+            <div class="label">
+                REAL PROJECTS · COOPERATION SHOWCASE
+            </div>
+
+            <h2 class="title">
+                Real factories.
+                <span>Real supply chains.</span>
+            </h2>
+
+        </div>
+
+        <div class="project-grid">
+
+            <!--
+            【照片位置 07】
+
+            assets/project-south-africa.jpg
+            -->
+
+            <article class="project project-sa reveal">
+
+                <div class="project-image" data-photo="project-south-africa"></div>
+
+                <div class="project-content">
+
+                    <small>
+                        SOUTH AFRICA
+                    </small>
+
+                    <h3>
+                        Building Materials Supply
+                    </h3>
+
+                    <p>
+                        Multi-SKU sourcing · Factory
+                        coordination · QC · Export shipment
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!--
+            【照片位置 08】
+
+            assets/project-indonesia.jpg
+            -->
+
+            <article class="project project-id reveal">
+
+                <div class="project-image" data-photo="project-indonesia"></div>
+
+                <div class="project-content">
+
+                    <small>
+                        INDONESIA
+                    </small>
+
+                    <h3>
+                        Construction Product Sourcing
+                    </h3>
+
+                    <p>
+                        Supplier matching · Price
+                        benchmarking · Consolidation
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!--
+            【照片位置 09】
+
+            assets/project-middle-east.jpg
+            -->
+
+            <article class="project project-me reveal">
+
+                <div class="project-image" data-photo="project-middle-east"></div>
+
+                <div class="project-content">
+
+                    <small>
+                        MIDDLE EAST
+                    </small>
+
+                    <h3>
+                        OEM / Private Label
+                    </h3>
+
+                    <p>
+                        Product development · Packaging ·
+                        Production · Inspection
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     NUMBERS
+========================================================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="numbers reveal">
+
+            <div class="number">
+                <strong data-number="50">0+</strong>
+                <span>Factories & Suppliers</span>
+            </div>
+
+            <div class="number">
+                <strong data-number="10">0+</strong>
+                <span>Product Categories</span>
+            </div>
+
+            <div class="number">
+                <strong data-number="8">0+</strong>
+                <span>Markets Served</span>
+            </div>
+
+            <div class="number">
+                <strong data-number="100">0%</strong>
+                <span>Process Transparency</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     FOUNDER
+========================================================= -->
+
+<section class="section" id="about">
+
+    <div class="founder reveal">
+
+        <!--
+        【照片位置 10】
+
+        assets/max.jpg
+
+        最重要的个人照片之一。
+
+        建议：
+        Max穿商务装
+        工厂背景
+        半身
+        4K
+        不要自拍
+        -->
+
+        <div class="founder-photo" data-photo="max"></div>
+
+        <div class="founder-copy">
+
+            <div class="label">
+                MEET YOUR PARTNER IN CHINA
+            </div>
+
+            <h2 class="title">
+                Not just a sourcing agent.
+                <span>A partner on the ground.</span>
+            </h2>
+
+            <p>
+                PAN-U VISION was built to help international
+                buyers navigate China's manufacturing ecosystem
+                with stronger product knowledge, engineering
+                thinking and local execution.
+            </p>
+
+            <p>
+                We don't simply forward supplier quotations.
+                We help buyers understand factories, products,
+                costs, quality risks and the practical realities
+                of manufacturing in China.
+            </p>
+
+            <div class="founder-quote">
+                “Your supplier is not the supply chain. The supply chain is everything between the requirement and the shipment.”
+            </div>
+
+            <div class="founder-meta">
+                <div><strong>Qingdao</strong>Industrial · Logistics</div>
+                <div><strong>Foshan</strong>Building Materials · Furniture</div>
+                <div><strong>On the Ground</strong>China-side execution</div>
+            </div>
+
+            <div class="founder-name">
+                Max Zane
+            </div>
+
+            <p>
+                Founder · International Supply Chain Specialist
+            </p>
+
+            <div class="credentials">
+
+                <span>
+                    Master of Engineering Management
+                </span>
+
+                <span>
+                    National Level 1 Constructor
+                </span>
+
+                <span>
+                    Intermediate Engineer
+                </span>
+
+                <span>
+                    International Trade
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     BRAND VIDEO
+========================================================= -->
+
+<section class="brand-video">
+
+    <div class="video-box">
+
+        <!--
+        【视频位置 11】
+
+        assets/brand-film.mp4
+
+        15-30秒
+
+        内容：
+
+        Factory
+        ↓
+        Product
+        ↓
+        QC
+        ↓
+        Warehouse
+        ↓
+        Container
+        ↓
+        Port
+        ↓
+        World
+
+        -->
+
+        <video
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="assets/brand-film.jpg">
+
+            <source
+                src="assets/brand-film.mp4"
+                type="video/mp4">
+
+        </video>
+
+        <div class="video-overlay">
+
+            <div class="label">
+                PAN-U VISION
+            </div>
+
+            <h2>
+                Built in China.
+                <span>Delivered to the world.</span>
+            </h2>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section class="section" id="contact">
+
+    <div class="contact reveal">
+
+        <div class="contact-copy">
+
+            <div class="label">
+                START YOUR SOURCING PROJECT
+            </div>
+
+            <h2 class="title">
+                Tell us what
+                <span>you're looking for.</span>
+            </h2>
+
+            <p>
+                Tell us about your product, target market,
+                quantity and destination. We'll come back
+                with the next practical step.
+            </p>
+
+            <div class="contact-info">
+
+                <span>Contact</span>
+                <strong>Max Zane</strong>
+
+                <span>WhatsApp / Phone</span>
+                <strong>+86 15192515439</strong>
+
+                <span>Email</span>
+                <strong>
+                    zane15192515439@gmail.com
+                </strong>
+
+                <span>China</span>
+                <strong>
+                    Qingdao · Foshan
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <form class="form" id="quoteForm">
+
+            <div class="form-row">
+
+                <label>
+                    Full Name
+                    <input
+                        type="text"
+                        name="name"
+                        required>
+                </label>
+
+                <label>
+                    Company
+                    <input
+                        type="text"
+                        name="company">
+                </label>
+
+            </div>
+
+            <div class="form-row">
+
+                <label>
+                    Country
+                    <input
+                        type="text"
+                        name="country"
+                        required>
+                </label>
+
+                <label>
+                    WhatsApp
+                    <input
+                        type="text"
+                        name="whatsapp">
+                </label>
+
+            </div>
+
+            <label>
+                Email
+                <input
+                    type="email"
+                    name="email"
+                    required>
+            </label>
+
+            <div class="form-row">
+
+                <label>
+                    Product Category
+
+                    <select name="category">
+
+                        <option>
+                            Building Materials
+                        </option>
+
+                        <option>
+                            Furniture & Living
+                        </option>
+
+                        <option>
+                            New Energy Products
+                        </option>
+
+                        <option>
+                            OEM / ODM Projects
+                        </option>
+
+                        <option>
+                            Small Commodities
+                        </option>
+
+                        <option>
+                            Procurement Agency
+                        </option>
+
+                        <option>
+                            Other
+                        </option>
+
+                    </select>
+
+                </label>
+
+                <label>
+                    Estimated Quantity
+
+                    <input
+                        type="text"
+                        name="quantity">
+
+                </label>
+
+            </div>
+
+            <label>
+                Destination / Port
+
+                <input
+                    type="text"
+                    name="destination">
+
+            </label>
+
+            <label>
+                What are you looking for?
+
+                <textarea
+                    name="message"
+                    rows="6"
+                    required></textarea>
+
+            </label>
+
+            <button type="submit">
+                Send Sourcing Request →
+            </button>
+
+            <p
+                id="formMessage"
+                style="font-size:10px;color:#777;margin-top:15px;">
+            </p>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="footer">
+
+    <div>
+
+        <div class="footer-logo">
+            PAN-U VISION
+        </div>
+
+        <p>
+            China Supply Chain.<br>
+            Global Business.
+        </p>
+
+    </div>
+
+    <div>
+
+        <h4>EXPLORE</h4>
+
+        <a href="#solutions">
+            Solutions
+        </a>
+
+        <a href="#procurement">
+            Procurement
+        </a>
+
+        <a href="#industries">
+            Industries
+        </a>
+
+        <a href="#quality">
+            Quality
+        </a>
+
+        <a href="#projects">
+            Projects
+        </a>
+
+    </div>
+
+    <div>
+
+        <h4>CONNECT</h4>
+
+        <a href="#contact">
+            Start a Project
+        </a>
+
+        <a href="mailto:zane15192515439@gmail.com">
+            Email
+        </a>
+
+        <!-- 修改这里的WhatsApp号码 -->
+
+        <a
+            href="https://wa.me/8615192515439"
+            target="_blank">
+
+            WhatsApp
+
+        </a>
+
+    </div>
+
+    <div>
+
+        <h4>CHINA</h4>
+
+        <p>
+            Qingdao<br>
+            Foshan<br>
+            China
+        </p>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 PAN-U VISION Supply Chain Technology
+        (Qingdao) Co., Ltd. All rights reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- =========================================================
+     FLOATING WHATSAPP
+========================================================= -->
+
+<!--
+修改下面的：
+
+86XXXXXXXXXX
+
+为你的真实WhatsApp号码。
+
+例如：
+
+8613812345678
+-->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/8615192515439"
+    target="_blank"
+    aria-label="WhatsApp">
+
+    ☎
+
+</a>
+
+
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script>
+
+/* =========================================================
+   LOADER
+========================================================= */
+
+window.addEventListener("load",function(){
+
+    setTimeout(function(){
+
+        document
+        .getElementById("loader")
+        .classList.add("hide");
+
+    },800);
+
+});
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+window.addEventListener("scroll",function(){
+
+    const header =
+        document.getElementById("header");
+
+    if(window.scrollY > 60){
+
+        header.classList.add("scrolled");
+
+    }else{
+
+        header.classList.remove("scrolled");
+
+    }
+
+});
+
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const observer =
+new IntersectionObserver(
+
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target
+                .classList
+                .add("active");
+
+            }
+
+        });
+
+    },
+
+    {
+        threshold:.12
+    }
+
+);
+
+document
+.querySelectorAll(".reveal")
+.forEach(el => observer.observe(el));
+
+
+/* =========================================================
+   NUMBER COUNTER
+========================================================= */
+
+const counters =
+document.querySelectorAll("[data-number]");
+
+let counterStarted=false;
+
+const counterObserver =
+new IntersectionObserver(
+
+    entries => {
+
+        if(
+            entries[0].isIntersecting &&
+            !counterStarted
+        ){
+
+            counterStarted=true;
+
+            counters.forEach(counter => {
+
+                const target =
+                    Number(
+                        counter.dataset.number
+                    );
+
+                let current=0;
+
+                const step =
+                    Math.max(
+                        1,
+                        Math.ceil(target/40)
+                    );
+
+                const timer =
+                    setInterval(()=>{
+
+                        current += step;
+
+                        if(current>=target){
+
+                            current=target;
+
+                            clearInterval(timer);
+
+                        }
+
+                        counter.textContent =
+                            current +
+                            (
+                                target===100
+                                ? "%"
+                                : "+"
+                            );
+
+                    },30);
+
+            });
+
+        }
+
+    },
+
+    {
+        threshold:.5
+    }
+
+);
+
+if(counters.length){
+
+    counterObserver.observe(
+        counters[0].parentElement.parentElement
+    );
+
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+function openMenu(){
+
+    alert(
+        "Mobile navigation: connect this button to your preferred mobile menu."
+    );
+
+}
+
+
+/* =========================================================
+   LANGUAGE
+========================================================= */
+
+function toggleLanguage(){
+
+    alert(
+        "V3 can connect this button to a full English / Chinese language system."
+    );
+
+}
+
+
+/* =========================================================
+   LOCAL IMAGE ASSET LOADER
+   Tries PNG/JPG/JPEG/WEBP so you do not need to rename files.
+========================================================= */
+(function(){
+    const extensions=["png","jpg","jpeg","webp"];
+
+    document.querySelectorAll("[data-photo]").forEach(el=>{
+        const base=el.getAttribute("data-photo");
+        let i=0;
+        const tryNext=()=>{
+            if(i>=extensions.length)return;
+            const ext=extensions[i++];
+            const src="assets/"+base+"."+ext;
+            const img=new Image();
+            img.onload=()=>{el.style.backgroundImage=`url("${encodeURI(src)}")`;};
+            img.onerror=tryNext;
+            img.src=src;
+        };
+        tryNext();
+    });
+
+    // Hero poster: automatically finds PNG/JPG/JPEG/WEBP.
+    const hero=document.querySelector(".hero-video[data-poster-base]");
+    if(hero){
+        const base=hero.dataset.posterBase;
+        let i=0;
+        const tryPoster=()=>{
+            if(i>=extensions.length)return;
+            const src="assets/"+base+"."+extensions[i++];
+            const img=new Image();
+            img.onload=()=>{hero.poster=src;};
+            img.onerror=tryPoster;
+            img.src=src;
+        };
+        tryPoster();
+    }
+})();
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+document
+.getElementById("quoteForm")
+.addEventListener("submit",function(e){
+
+    e.preventDefault();
+
+    const form =
+        new FormData(this);
+
+    const name =
+        form.get("name");
+
+    const company =
+        form.get("company");
+
+    const country =
+        form.get("country");
+
+    const whatsapp =
+        form.get("whatsapp");
+
+    const email =
+        form.get("email");
+
+    const category =
+        form.get("category");
+
+    const quantity =
+        form.get("quantity");
+
+    const destination =
+        form.get("destination");
+
+    const message =
+        form.get("message");
+
+
+    const subject =
+        encodeURIComponent(
+            "New PAN-U VISION Sourcing Request"
+        );
+
+
+    const body =
+        encodeURIComponent(
+
+`New Sourcing Request
+
+Name:
+${name}
+
+Company:
+${company}
+
+Country:
+${country}
+
+WhatsApp:
+${whatsapp}
+
+Email:
+${email}
+
+Product:
+${category}
+
+Quantity:
+${quantity}
+
+Destination:
+${destination}
+
+Requirement:
+${message}
+`
+        );
+
+
+    window.location.href =
+        "mailto:zane15192515439@gmail.com" +
+        "?subject=" +
+        subject +
+        "&body=" +
+        body;
+
+
+    document
+    .getElementById("formMessage")
+    .textContent =
+        "Preparing your sourcing request...";
+
+});
+
+</script>
+
+</body>
+</html>
